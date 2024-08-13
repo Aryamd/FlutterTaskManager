@@ -1,0 +1,34 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services'  // Plugin Google Services
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.task_managerv2.app"
+    compileSdk = 34  // Gantilah dengan versi compileSdk yang sesuai jika berbeda
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.task_managerv2.app"  // Pastikan ini sesuai dengan Firebase
+        minSdk = 23  // Ubah minSdkVersion ke 23 atau lebih sesuai dengan kesalahan
+        targetSdk = 34  // Gantilah dengan versi targetSdk yang sesuai jika berbeda
+        versionCode = 1  // Gantilah dengan nilai versionCode yang sesuai
+        versionName = "1.0"  // Gantilah dengan nilai versionName yang sesuai
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
